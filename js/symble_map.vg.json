@@ -2,13 +2,13 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 500,
-    "title": "Earthquakes of magnitude 4 or large between 4 Oct 2020 and 10 Oct 2020",
+    "title": "Vic houses sold from 500k to 5 Mil",
     "projection": {"type": "equalEarth"},
     "layer": [
       {
         "data": {
           "url": "https://raw.githubusercontent.com/BigDjeff/fit_ass/main/js/vic_localities.json",
-          "format": {"type": "topojson", "feature": "vic_localities"}
+          "format": {"type": "topojson", "feature": "vic_locality_pid_linkage"}
         },
         "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
       },
@@ -21,16 +21,16 @@
           "longitude": {"field": "longitude", "type": "quantitative"},
           "latitude": {"field": "latitude", "type": "quantitative"},
           "size": {
-            "field": "mag",
+            "field": "price",
             "type": "quantitative",
-            "scale": {"domain": [4, 8]}
+            "scale": {"domain": [500000, 5000000]}
           },
           "color": {
-            "field": "depth",
+            "field": "price",
             "type": "quantitative",
             "scale": {"scheme": "reds"}
           }
         }
       }
     ]
-  }\
+  }
